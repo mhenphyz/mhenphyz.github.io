@@ -45,6 +45,9 @@ a {
     text-decoration: none;
 }
 
+// variables
+$url: 'https://mhenphyz.github.io/';
+
 // definicao de cores
 
 $background   :  #282a36;
@@ -127,6 +130,18 @@ $white        :  #ffffff;
     background-color: $foreground;
 }
 
+//fonts
+
+@font-face {
+  font-family: ShadowsIntoLight;
+  src: url($url + 'assets/fonts/ShadowsIntoLight-Regular.ttf');
+}
+
+@font-face {
+  font-family: CommicNeue;
+  src: url($url + 'assets/fonts/ComicNeue-Light.ttf');
+}
+
 // responsividade
 // typescript
 @function strip-unit($value) {
@@ -194,22 +209,63 @@ img.fluid {
     height: auto;
 }
 
+$multiplicator : 2%;
 @for $i from 0 to 6{
     .p-#{$i}x{
-        padding: $i * 5%;
+        padding: $i * $multiplicator;
     }
     .pl-#{$i}x{
-        padding-left: $i * 5%;
+        padding-left: $i * $multiplicator;
     }
     .pr-#{$i}x{
-        padding-right: $i * 5%;
+        padding-right: $i * $multiplicator;
     }
     .pt-#{$i}x{
-        padding-top: $i * 5%;
+        padding-top: $i * $multiplicator;
     }
     .pb-#{$i}x{
-        padding-bottom: $i * 5%;
+        padding-bottom: $i * $multiplicator;
     }
+    .pv-#{$i}x{
+      padding-right: $i * $multiplicator;
+      padding-left: $i * $multiplicator;
+    }
+    .ph-#{$i}x{
+      padding-top: $i * $multiplicator;
+      padding-bottom: $i * $multiplicator;
+    }
+    //margin
+    .m-#{$i}x{
+        margin: $i * $multiplicator;
+    }
+    .ml-#{$i}x{
+        margin-left: $i * $multiplicator;
+    }
+    .mr-#{$i}x{
+        margin-right: $i * $multiplicator;
+    }
+    .mt-#{$i}x{
+        margin-top: $i * $multiplicator;
+    }
+    .mb-#{$i}x{
+        margin-bottom: $i * $multiplicator;
+    }
+    .mv-#{$i}x{
+      margin-right: $i * $multiplicator;
+      margin-left: $i * $multiplicator;
+    }
+    .mh-#{$i}x{
+      margin-top: $i * $multiplicator;
+      margin-bottom: $i * $multiplicator;
+    }
+}
+
+@for $i from 0 to 4{
+  div.spacer-#{$i}x{
+    display:block;
+    width: 100%;
+    height: $i * 5%;
+  }
 }
 
 // navigation bar
@@ -413,8 +469,29 @@ div.image-set{
 
 
 
+// classes
 
+.card{
+  display:block;
+  background-color: $white;
+  text-align: center;
+  box-shadow: -6px -6px 20px rgba(255, 255, 255 , 1),
+              6px 6px 20px rgba(0, 0, 0 , .1);
 
+  &:hover{
+    box-shadow: inset -6px -6px 10px rgba(255, 255, 255 , .5),
+                inset 6px 6px 20px rgba(0, 0, 0 , .2);
+  }
+
+  font-family: 'CommicNeue';
+}
+
+.grid {
+	display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+  justify-content: stretch;
+}
 
 
 
