@@ -1,5 +1,5 @@
-var URL = "mhenphyz.github.io/"
+//var URL = "mhenphyz.github.io/"
 
 function redirect(path){
-    window.location.replace(URL + path);
+    window.location.replace(path);
 }
