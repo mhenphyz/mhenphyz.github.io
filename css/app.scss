@@ -644,6 +644,20 @@ div.image-set{
   }
 }
 
+button.submit{
+  background-color: $background2;
+  border: 0;
+  padding: 10px;
+  color: $comment;
+  cursor: pointer;
+  border: solid 1px $comment;
+
+  &:hover{
+    color: $cyan;
+    border: solid 1px $cyan;
+  }
+}
+
 .keytable{
   padding: 5%;
   display: flex;

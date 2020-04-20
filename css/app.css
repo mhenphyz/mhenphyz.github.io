@@ -1064,6 +1064,19 @@ div.image-set img[animation='LeftAnimation'] {
   right: 0;
 }
 
+button.submit {
+  background-color: #21222C;
+  border: 0;
+  padding: 10px;
+  color: #6272a4;
+  cursor: pointer;
+  border: solid 1px #6272a4;
+}
+button.submit:hover {
+  color: #8be9fd;
+  border: solid 1px #8be9fd;
+}
+
 .keytable {
   padding: 5%;
   display: -webkit-box;

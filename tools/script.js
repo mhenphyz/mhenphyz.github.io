@@ -21,14 +21,13 @@ function defineVariables(){
     keyLenghtSlider.oninput = function(){
       keyLenghtText.innerHTML = keyLenghtSlider.value;
     };
-    
-    // generate passwords for the first time
-    generatePasswords();
+
+    keyNumbers = document.getElementById('numberOfkeys').value;
+    keyLenght = keyLenghtText.innerHTML;
 }
 
 function generatePasswords(){
-  keyNumbers = document.getElementById('numberOfkeys').value;
-  keyLenght = keyLenghtText.innerHTML;
+  defineVariables();
 
   if (keyNumbers < 1 || (useLower == false) && (useUpper == false) && (useNumbers == false) && (useSpecial == false) && (useHex == false) ) {
     oneKeyOutput.innerHTML = 'NULL';
@@ -74,5 +73,6 @@ function keyGen( length = 8, useLowerCase = true, useUpperCase = true, useNumber
 }
 
 window.addEventListener('load', function () {
-  defineVariables();
+  // generate passwords for the first time
+  generatePasswords();
 })
