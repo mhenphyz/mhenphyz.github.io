@@ -91,6 +91,10 @@ a {
   color: #ffffff;
 }
 
+.text-cyan {
+  color: #8be9fd;
+}
+
 .bg-primary {
   background-color: #282a36;
 }
@@ -603,6 +607,46 @@ div.spacer-3x {
   height: 15%;
 }
 
+.w-0 {
+  width: 0%;
+}
+
+.w-25 {
+  width: 2500%;
+}
+
+.w-50 {
+  width: 5000%;
+}
+
+.w-75 {
+  width: 7500%;
+}
+
+.w-100 {
+  width: 10000%;
+}
+
+.h-0 {
+  height: 0%;
+}
+
+.h-25 {
+  height: 2500%;
+}
+
+.h-50 {
+  height: 5000%;
+}
+
+.h-75 {
+  height: 7500%;
+}
+
+.h-100 {
+  height: 10000%;
+}
+
 /* Add a black background color to the top navigation */
 nav {
   background-color: #333;
@@ -661,6 +705,16 @@ section.banner {
   width: 100%;
   height: auto;
   display: block;
+}
+section.banner .tool {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+section.banner .tool .tool-body .generatedPassword {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
 }
 section.quote {
   color: #7a7c88;
@@ -870,159 +924,175 @@ div.image-set img[animation='LeftAnimation'] {
   }
 }
 .card {
+  position: relative;
+  color: #f8f8f2;
   display: block;
-  background-color: #ffffff;
+  background-color: #282a36;
   text-align: center;
-  -webkit-box-shadow: -6px -6px 20px white, 6px 6px 20px rgba(0, 0, 0, 0.1);
-          box-shadow: -6px -6px 20px white, 6px 6px 20px rgba(0, 0, 0, 0.1);
-  font-family: 'CommicNeue';
+  min-height: 150px;
+  cursor: pointer;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-box-shadow: -6px -6px 20px black, 6px 6px 20px rgba(255, 255, 255, 0.1);
+          box-shadow: -6px -6px 20px black, 6px 6px 20px rgba(255, 255, 255, 0.1);
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-box-shadow: inset -6px -6px 10px rgba(0, 0, 0, 0.5), inset 6px 6px 20px rgba(255, 255, 255, 0.1);
+          box-shadow: inset -6px -6px 10px rgba(0, 0, 0, 0.5), inset 6px 6px 20px rgba(255, 255, 255, 0.1);
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 .card:hover {
-  -webkit-box-shadow: inset -6px -6px 10px rgba(255, 255, 255, 0.5), inset 6px 6px 20px rgba(0, 0, 0, 0.2);
-          box-shadow: inset -6px -6px 10px rgba(255, 255, 255, 0.5), inset 6px 6px 20px rgba(0, 0, 0, 0.2);
+  color: #50fa7b;
+}
+.card:hover .header > i {
+  font-size: 2rem;
+}
+.card:hover::before {
+  opacity: 0;
+}
+.card:hover::after {
+  opacity: 1;
+}
+.card .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.card .header i {
+  font-size: 2.5rem;
+  -webkit-transition: font-size .2s ease;
+  transition: font-size .2s ease;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, 30%);
   grid-gap: 15px;
   -webkit-box-pack: stretch;
       -ms-flex-pack: stretch;
           justify-content: stretch;
 }
 
-.mo-fire {
-  height: auto;
-  position: absolute;
-}
-
-#svg-view {
-  width: 252px;
-  height: 125px;
-  left: 0px;
-}
-
-.mo-fire svg {
+.slidecontainer {
   width: 100%;
-  height: auto;
-  position: relative;
-  right: 40px;
 }
 
-.flame {
-  -webkit-animation-name: flameDisappear;
-          animation-name: flameDisappear;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+.slider {
+  -webkit-appearance: none;
+  /* Override default CSS styles */
+  -moz-appearance: none;
+       appearance: none;
+  width: 75%;
+  height: 3px;
+  background: #6272a4;
+  outline: none;
   opacity: 0.5;
-  -webkit-transform-origin: 45% 45% 0;
-          transform-origin: 45% 45% 0;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+.slider + #passwdLenght {
+  opacity: 0.5;
+}
+.slider:hover, .slider:hover + #passwdLenght {
+  opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #282a36;
+  cursor: pointer;
+}
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border: none;
+  background: #8be9fd;
+  cursor: pointer;
 }
 
-.flame.one {
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+.inputContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  color: #f8f8f2;
+  row-gap: 30%;
+  -webkit-column-gap: 25px;
+          column-gap: 25px;
+  padding: 0 20%;
+}
+.inputContainer .inputGroupOptionInput {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.inputContainer .inputGroupOptionInput label {
+  font-size: 0.9rem;
+}
+.inputContainer .inputGroupOptionInput input[type=checkbox] {
+  position: absolute;
+  right: 0;
 }
 
-.flame.two {
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+.keytable {
+  padding: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 90%;
+}
+.keytable .key {
+  display: block;
+  padding: 10px;
+  color: #6272a4;
 }
 
-.flame-main {
-  -webkit-animation-name: flameMovement;
-          animation-name: flameMovement;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+input[type=text] {
+  background-color: transparent;
+  padding: .2rem;
+  border: none;
+  border-bottom: solid 1px rgba(80, 250, 123, 0.5);
+  color: #6272a4;
 }
-
-.flame-main.one {
-  -webkit-animation-duration: 2.2s;
-          animation-duration: 2.2s;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-}
-
-.flame-main.two {
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-}
-
-.flame-main.three {
-  -webkit-animation-duration: 2.1s;
-          animation-duration: 2.1s;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
-}
-
-.flame-main.four {
-  -webkit-animation-duration: 3.2s;
-          animation-duration: 3.2s;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-}
-
-.flame-main.five {
-  -webkit-animation-duration: 2.5s;
-          animation-duration: 2.5s;
-  -webkit-animation-delay: 5s;
-          animation-delay: 5s;
-}
-
-@-webkit-keyframes flameMovement {
-  50% {
-    -webkit-transform: scale(0.98, 1) translate(0, 2px) rotate(-1deg);
-            transform: scale(0.98, 1) translate(0, 2px) rotate(-1deg);
-  }
-}
-
-@keyframes flameMovement {
-  50% {
-    -webkit-transform: scale(0.98, 1) translate(0, 2px) rotate(-1deg);
-            transform: scale(0.98, 1) translate(0, 2px) rotate(-1deg);
-  }
-}
-@-webkit-keyframes flameDisappear {
-  0% {
-    -webkit-transform: translate(0) rotate(180deg);
-            transform: translate(0) rotate(180deg);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translate(-10px, -40px) rotate(180deg);
-            transform: translate(-10px, -40px) rotate(180deg);
-    opacity: 0;
-  }
-}
-@keyframes flameDisappear {
-  0% {
-    -webkit-transform: translate(0) rotate(180deg);
-            transform: translate(0) rotate(180deg);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translate(-10px, -40px) rotate(180deg);
-            transform: translate(-10px, -40px) rotate(180deg);
-    opacity: 0;
-  }
+input[type=text]:hover {
+  color: #8be9fd;
+  border-color: rgba(80, 250, 123, 0.9);
 }
 
 /*# sourceMappingURL=app.css.map */
