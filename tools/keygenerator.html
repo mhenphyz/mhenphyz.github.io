@@ -7,21 +7,41 @@
     <title>Mhenphyz Networks</title>
     <link rel="stylesheet" href="css/fontawesome/css/all.css">
     <link rel="stylesheet" href="css/app.css">
-    <script src="tools/script.js"></script>
+    <script src="js/app.js"></script>
+    <script src="tools/kg-script.js"></script>
 </head>
 <body class="bg-dark">
-    
-    <nav class="navigation-bar" id="myTopnav">
-        <a href="#home" class="active">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-        <a href="javascript:void(0);" class="icon " onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
-    </nav>
-
     <div class="spacer-1x"></div>
+    <div class="logo-box">
+      <svg onclick="redirect('index.html')">
+      <text x="50%" y="50%" text-anchor="middle" fill="url(#pattern)" font-family="'Shadows Into Light'" font-size="3rem" letter-spacing="0px" stroke-width=".26458" word-spacing="0px" style="line-height:1.25" xml:space="preserve">Mhenphyz</text>
+        
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0">
+            <stop offset="0%" style="stop-color:#008099;"/>
+            <stop offset="35%" style="stop-color:#00d4ff;"/>
+            <stop offset="100%" style="stop-color:#008099;"/>
+          </linearGradient>          
+          <pattern id="pattern" x="0" y="0" width="300%" height="100%" patternUnits="userSpaceOnUse">
+            <rect x="0" y="0" width="150%" height="100%" fill="url(#gradient)">
+              <animate attributeType="XML"
+                       attributeName="x"
+                       from="0" to="150%"
+                       dur="7s"
+                       repeatCount="indefinite"/>
+            </rect>
+            <rect x="-150%" y="0" width="150%" height="100%" fill="url(#gradient)">
+              <animate attributeType="XML"
+                       attributeName="x"
+                       from="-150%" to="0"
+                       dur="7s"
+                       repeatCount="indefinite"/>
+            </rect>
+          </pattern>
+        </defs>
+      </svg>
+  
+    </div>
     <section class="banner pt-1x ">
         <div class="tool">
             <h2 class="header text-white">

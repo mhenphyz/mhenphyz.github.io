@@ -200,6 +200,7 @@ h3 {
 html{
     width: 100vw;
     height:100vh;
+    max-width: 100%;
 }
 
 body{
@@ -284,6 +285,14 @@ $multiplicator : 2%;
   .h-#{$value}{
     height: percentage($value);
   }
+}
+
+div.logo-box{
+  display: flex;
+  width: 100%;
+  height: 10%;
+  justify-content: center;
+  align-items: center;
 }
 
 // navigation bar
