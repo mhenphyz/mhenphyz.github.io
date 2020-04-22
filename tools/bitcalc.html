@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <BASE href="../">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bit Calculator | Mhenphyz</title>
+    <link rel="stylesheet" href="css/fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/app.js"></script>
+    <script src="tools/bit-script.js"></script>
+</head>
+<body class="bg-dark">
+    <div class="spacer-1x"></div>
+    <div class="logo-box">
+      <svg onclick="redirect('index.html')">
+      <text x="50%" y="50%" text-anchor="middle" fill="url(#pattern)" font-family="'Shadows Into Light'" font-size="3rem" letter-spacing="0px" stroke-width=".26458" word-spacing="0px" style="line-height:1.25" xml:space="preserve">Mhenphyz</text>
+        
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0">
+            <stop offset="0%" style="stop-color:#008099;"/>
+            <stop offset="35%" style="stop-color:#00d4ff;"/>
+            <stop offset="100%" style="stop-color:#008099;"/>
+          </linearGradient>          
+          <pattern id="pattern" x="0" y="0" width="300%" height="100%" patternUnits="userSpaceOnUse">
+            <rect x="0" y="0" width="150%" height="100%" fill="url(#gradient)">
+              <animate attributeType="XML"
+                       attributeName="x"
+                       from="0" to="150%"
+                       dur="7s"
+                       repeatCount="indefinite"/>
+            </rect>
+            <rect x="-150%" y="0" width="150%" height="100%" fill="url(#gradient)">
+              <animate attributeType="XML"
+                       attributeName="x"
+                       from="-150%" to="0"
+                       dur="7s"
+                       repeatCount="indefinite"/>
+            </rect>
+          </pattern>
+        </defs>
+      </svg>
+  
+    </div>
+    <section class="banner pt-1x ">
+        <div class="tool">
+            <h2 class="header text-white">
+              <i class="fas fa-exchange-alt text-cyan"></i>
+                Conversor de Unidades 
+            </h2>
+            <div class="tool-body text-white pt-2x">
+                <div class="input-data-box">
+                  Converter 
+                  <input class="w-25" type="text" name="amount" value="7">
+                  <select name="unit-type">
+                    <option value="0" >bit</option>
+                    <option value="1" >bytes</option>
+                    <option value="2" >kilobits</option>
+                    <option value="3" >kilobytes</option>
+                    <option value="4" >megabits</option>
+                    <option value="5" >megabytes</option>
+                    <option value="6" >gigabits</option>
+                    <option value="7" selected>gibabytes</option>
+                    <option value="8" >terabits</option>
+                    <option value="9" >terabytes</option>
+                    <option value="10" >petabits</option>
+                    <option value="11" >petabytes</option>
+                  </select>
+                  sendo que 1k = 
+                  <select name="notation">
+                    <option value="1000">1000</option>
+                    <option value="1024">1024</option>
+                  </select>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="spacer-3x"></div>
+</body>
+</html>
