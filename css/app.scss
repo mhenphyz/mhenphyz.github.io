@@ -213,6 +213,49 @@ img.fluid {
     height: auto;
 }
 
+[onclick^="toClipboard"]{
+  &:active{
+    animation: .5s ease blink;
+  }
+}
+
+span.alert{
+  color: $foreground;
+  display: box;
+  position: fixed;
+  bottom: 0;
+  width: auto;
+  max-width: 600px;
+  padding: 10px;
+  background-color: $background;
+  border: 2px solid $comment;
+  border-radius: 10px;
+  margin-bottom: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  animation: .3s ease-in fadeIn;
+
+  &:hover {
+    border-color: $purple;
+  }
+
+  > i {
+    position: absolute;
+    margin-right: 10px;
+    right: 0;
+    height: 100%;
+    font-size: .7rem;
+
+    &:hover {
+      color: $pink;
+      cursor: pointer;
+    }
+  }
+}
+
 $multiplicator : 2%;
 @for $i from 0 to 6{
     .p-#{$i}x{
@@ -480,6 +523,26 @@ div.image-set{
     }
   }
 
+@keyframes blink{
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
 
 
 // classes

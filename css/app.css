@@ -224,6 +224,46 @@ img.fluid {
   height: auto;
 }
 
+[onclick^="toClipboard"]:active {
+  -webkit-animation: .5s ease blink;
+          animation: .5s ease blink;
+}
+
+span.alert {
+  color: #f8f8f2;
+  display: box;
+  position: fixed;
+  bottom: 0;
+  width: auto;
+  max-width: 600px;
+  padding: 10px;
+  background-color: #282a36;
+  border: 2px solid #6272a4;
+  border-radius: 10px;
+  margin-bottom: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  -webkit-animation: .3s ease-in fadeIn;
+          animation: .3s ease-in fadeIn;
+}
+span.alert:hover {
+  border-color: #bd93f9;
+}
+span.alert > i {
+  position: absolute;
+  margin-right: 10px;
+  right: 0;
+  height: 100%;
+  font-size: .7rem;
+}
+span.alert > i:hover {
+  color: #ff79c6;
+  cursor: pointer;
+}
+
 .p-0x {
   padding: 0%;
 }
@@ -925,6 +965,44 @@ div.image-set img[animation='LeftAnimation'] {
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
   }
 }
 .card {
