@@ -51,8 +51,8 @@
             <div class="tool-body text-white pt-2x">
                 <div class="input-data-box">
                   Converter 
-                  <input class="w-25" type="text" name="amount" value="7">
-                  <select name="unit-type">
+                  <input class="w-25" type="text" id="amount" value="7">
+                  <select id="unit-type">
                     <option value="0" >bit</option>
                     <option value="1" >bytes</option>
                     <option value="2" >kilobits</option>
@@ -67,10 +67,85 @@
                     <option value="11" >petabytes</option>
                   </select>
                   sendo que 1k = 
-                  <select name="notation">
+                  <select id="notation">
                     <option value="1000">1000</option>
                     <option value="1024">1024</option>
                   </select>
+                </div>
+                <button class="submit m-1x" onclick="convertBits()">Converter</button>
+                <div class="units-output">
+                  <span>
+                    <span>bit</span>
+                    <span id="bits-out" >
+                      Output bit
+                    </span>
+                  </span>
+                  <span>
+                    <span>bytes</span>
+                    <span id="bytes-out" >
+                      Output bytes
+                    </span>
+                  </span>
+                  <span>
+                    <span>kilobits</span>
+                    <span id="kilobits-out" >
+                      Output kilobits
+                    </span>
+                  </span>
+                  <span>
+                    <span>kilobytes</span>
+                    <span id="kilobytes-out" >
+                      Output kilobytes
+                    </span>
+                  </span>
+                  <span>
+                    <span>megabits</span>
+                    <span id="megabits-out" >
+                      Output megabits
+                    </span>
+                  </span>
+                  <span>
+                    <span>megabytes</span>
+                    <span id="megabytes-out" >
+                      Output megabytes
+                    </span>
+                  </span>
+                  <span>
+                    <span>gigabits</span>
+                    <span id="gigabits-out" >
+                      Output gigabits
+                    </span>
+                  </span>
+                  <span>
+                    <span>gibabytes</span>
+                    <span id="gibabytes-out" >
+                      Output gibabytes
+                    </span>
+                  </span>
+                  <span>
+                    <span>terabits</span>
+                    <span id="terabits-out" >
+                      Output terabits
+                    </span>
+                  </span>
+                  <span>
+                    <span>terabytes</span>
+                    <span id="terabytes-out" >
+                      Output terabytes
+                    </span>
+                  </span>
+                  <span>
+                    <span>petabits</span>
+                    <span id="petabits-out" >
+                      Output petabits
+                    </span>
+                  </span>
+                  <span>
+                    <span>petabytes</span>
+                    <span id="petabytes-out" >
+                      Output petabytes
+                    </span>
+                  </span>
                 </div>
             </div>
         </div>
