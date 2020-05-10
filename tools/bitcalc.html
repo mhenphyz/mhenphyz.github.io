@@ -50,7 +50,7 @@
             </h2>
             <div class="tool-body text-white pt-2x">
                 <div class="input-data-box">
-                  Converter 
+                  <span data-lang="bitcalc_convert">: </span>
                   <input class="w-25" type="text" id="amount" value="1">
                   <select id="unit-type">
                     <option value="0" >bits</option>
@@ -72,7 +72,7 @@
                     <option value="1024" selected>1024</option>
                   </select>
                 </div>
-                <button class="submit m-1x" onclick="convertBits()">Converter</button>
+                <button class="submit m-1x" onclick="convertBits()" data-lang="btn-calculate">Calculate</button>
                 <div class="units-output">
                   <span>
                     <span>bits</span>

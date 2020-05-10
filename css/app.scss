@@ -545,79 +545,81 @@ div.image-set{
 }
 
 
-// classes
-
-.card{
-  position: relative;
-  color: $foreground;
-  display:block;
-  background-color: $background;
-  text-align: center;
-  min-height: 150px;
-  cursor: pointer;
-
-
-  &::before{
-    content: '';
-    position: absolute;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    box-shadow: -6px -6px 20px rgba(0, 0, 0 , 1),
-                 6px 6px 20px rgba(255, 255, 255 , .1);
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  &::after{
-    content: '';
-    position: absolute;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    box-shadow: inset -6px -6px 10px rgba(0, 0, 0 , .5),
-                inset 6px 6px 20px rgba(255, 255, 255 , .1);
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  &:hover{
-    color: $green;
-
-    .header > i {
-      font-size: 2rem;
-    }
-    &::before{
-      opacity: 0;
-    }
-    &::after{
-      opacity: 1;
-    }
-  }
-
-  .header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50%;
-    position: relative;
-    overflow: hidden;
-
-    i {
-      font-size: 2.5rem;
-      transition: font-size .2s ease;
-    }
-  }
-}
-
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 30%);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 15px;
   justify-content: stretch;
+}
+
+// classes
+.card-group{
+    
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+  .card{
+    position: relative;
+    color: $foreground;
+    display:block;
+    background-color: $background;
+    text-align: center;
+    height: 150px;
+    cursor: pointer;
+
+
+    &::before{
+      content: '';
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      box-shadow: -6px -6px 20px rgba(0, 0, 0 , 1),
+                   6px 6px 20px rgba(255, 255, 255 , .1);
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    &::after{
+      content: '';
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      box-shadow: inset -6px -6px 10px rgba(0, 0, 0 , .5),
+                  inset 6px 6px 20px rgba(255, 255, 255 , .1);
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    &:hover{
+      color: $green;
+
+      .header > i {
+        font-size: 2rem;
+      }
+      &::before{
+        opacity: 0;
+      }
+      &::after{
+        opacity: 1;
+      }
+    }
+
+    .header{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 50%;
+
+      i {
+        font-size: 2.5rem;
+        transition: font-size .2s ease;
+      }
+    }
+  }
 }
 
 
@@ -648,7 +650,8 @@ div.image-set{
     appearance: none;
     width: 25px;
     height: 25px;
-    background: $background;
+    background: $cyan;
+    border-radius:50%;
     cursor: pointer;
   }
 
@@ -661,12 +664,11 @@ div.image-set{
   }  
 }
 
-
 .inputContainer{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   color: $foreground;
-  row-gap: 30%;
+  row-gap: 5%;
   column-gap: 25px;
   padding: 0 20%;
 

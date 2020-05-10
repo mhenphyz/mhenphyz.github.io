@@ -44,3 +44,43 @@ function destroyElement(el){
     const parent = el.parentNode;
     parent.removeChild(el);
 }
+
+function translate(){
+    // TODO save language on browser cache
+    var lang = 'pt-br';
+    var attribute = 'data-lang';
+    var request = new XMLHttpRequest();
+        try {
+            request.open("GET", `lang/${lang}.json`, true);
+            request.onreadystatechange = function ()
+            {
+                // operation done
+                if(request.readyState === 4)
+                {   
+                    // operation success
+                    if(request.status === 200 || request.status == 0)
+                    {
+                        console.log(request);
+                        var langTranslations = JSON.parse(request.responseText);
+                        var allDom = document.getElementsByTagName('*');
+                        for(var i =0; i < allDom.length; i++){
+                            var elem = allDom[i];
+                            var key = elem.getAttribute(attribute);
+
+                            if(key != null) {
+                                 elem.innerHTML = langTranslations[key]  ;
+                            }
+                        }
+                    
+                    }
+                }
+            }
+            request.send();
+        } catch (error) {
+                console.log('It\'s not possible to translate the site' + error);
+        }
+}
+
+window.addEventListener('load', function () {
+    translate();
+  });

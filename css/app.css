@@ -1005,16 +1005,28 @@ div.image-set img[animation='LeftAnimation'] {
     opacity: 100%;
   }
 }
-.card {
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 15px;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+}
+
+.card-group {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.card-group .card {
   position: relative;
   color: #f8f8f2;
   display: block;
   background-color: #282a36;
   text-align: center;
-  min-height: 150px;
+  height: 150px;
   cursor: pointer;
 }
-.card::before {
+.card-group .card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1027,7 +1039,7 @@ div.image-set img[animation='LeftAnimation'] {
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
 }
-.card::after {
+.card-group .card::after {
   content: '';
   position: absolute;
   top: 0;
@@ -1040,19 +1052,19 @@ div.image-set img[animation='LeftAnimation'] {
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
 }
-.card:hover {
+.card-group .card:hover {
   color: #50fa7b;
 }
-.card:hover .header > i {
+.card-group .card:hover .header > i {
   font-size: 2rem;
 }
-.card:hover::before {
+.card-group .card:hover::before {
   opacity: 0;
 }
-.card:hover::after {
+.card-group .card:hover::after {
   opacity: 1;
 }
-.card .header {
+.card-group .card .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1064,22 +1076,11 @@ div.image-set img[animation='LeftAnimation'] {
           align-items: center;
   width: 100%;
   height: 50%;
-  position: relative;
-  overflow: hidden;
 }
-.card .header i {
+.card-group .card .header i {
   font-size: 2.5rem;
   -webkit-transition: font-size .2s ease;
   transition: font-size .2s ease;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 30%);
-  grid-gap: 15px;
-  -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
 }
 
 .slidecontainer {
@@ -1110,7 +1111,8 @@ div.image-set img[animation='LeftAnimation'] {
   appearance: none;
   width: 25px;
   height: 25px;
-  background: #282a36;
+  background: #8be9fd;
+  border-radius: 50%;
   cursor: pointer;
 }
 .slider::-moz-range-thumb {
@@ -1123,9 +1125,9 @@ div.image-set img[animation='LeftAnimation'] {
 
 .inputContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   color: #f8f8f2;
-  row-gap: 30%;
+  row-gap: 5%;
   -webkit-column-gap: 25px;
           column-gap: 25px;
   padding: 0 20%;
