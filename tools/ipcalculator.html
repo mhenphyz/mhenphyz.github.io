@@ -47,49 +47,22 @@
         <div class="tool">
             <h2 class="header text-white">
                 <i class="fab fa-keycdn text-cyan"></i>
-                Gerador de Senhas
+                Calculadora IP 
             </h2>
             <div class="tool-body">
-                <div class="generatedPassword ph-2x text-info">
-                  <div class="slidecontainer pb-1x">
-                    <input type="range" min="1" max="64" value="12" class="slider" id="keyLenght">
-                    <div id="passwdLenght" class="text-success" contenteditable>12</div>
-                  </div>
-                  <h1 class="passwd"></h1>
+                <div class="grid pt-1x text-secondary">
+                    <div class="text-box">IPv4</div>
+                    <div class="text-box">IPv6</div>
                 </div>
-                <button class="submit mb-2x" onclick="generatePasswords()"> Gerar Senha</button>
-                <div class="inputContainer col-3">
-                  <div class="inputGroupOptionInput">
-                    <label for="useLowerCases">Letras Minusculas</label>
-                    <input type="checkbox" name="useLowerCases" checked>
-                    <input class="w-100" type="text" name="lowerCase" value="abcdefghijklmnopqrstuvwxyz">
-                  </div>
-                  <div class="inputGroupOptionInput">
-                    <label for="useUpperCases">Letras Maiusculas</label>
-                    <input type="checkbox" name="useUpperCases" checked>
-                    <input class="w-100" type="text" name="upperCase" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ">
-                  </div>
-                  <div class="inputGroupOptionInput">
-                    <label for="useNumbers">Números</label>
-                    <input type="checkbox" name="useNumbers" checked>
-                    <input class="w-100" type="text" name="numbers" value="0123456789">
-                  </div>
-                  <div class="inputGroupOptionInput">
-                    <label for="useSpecial">Caracteres Especiais</label>
-                    <input type="checkbox" name="useSpecial" checked>
-                    <input class="w-100" type="text" name="specialChars" value="\!@#$%*()_+=-'|/;:.,{}^'`<>">
-                  </div>
-                  <div class="inputGroupOptionInput">
-                    <label for="useHex">Hexadecimal</label>
-                    <input type="checkbox" name="useHex">
-                    <input class="w-100" type="text" name="hexChars" value="0123456789ABCDEF">
-                  </div>
-                  <div class="inputGroupOptionInput">
-                    <label for="useHex">Número de Senhas</label>
-                    <input class="w-100" type="text" id="numberOfkeys" value="1">
-                  </div>
-                </div>
-                <div class="keytable pt-5x">
+                <div class="inputContainer grid-50">
+                    <div class="inputGroupOptionInput">
+                        <label for="ipAddress">IP Address</label>
+                        <input class="w-100" type="text" name="ipAddress" placeholder="IP Address">
+                    </div>
+                    <div class="inputGroupOptionInput">
+                        <label for="mask">IP Mask</label>
+                        <input class="w-100" type="text" name="mask" placeholder="Mask">
+                    </div>
                 </div>
             </div>
         </div>

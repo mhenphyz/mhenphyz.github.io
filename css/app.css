@@ -1125,12 +1125,13 @@ div.image-set img[animation='LeftAnimation'] {
 
 .inputContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   color: #f8f8f2;
   row-gap: 5%;
   -webkit-column-gap: 25px;
           column-gap: 25px;
   padding: 0 20%;
+  margin-top: 3%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 .inputContainer .inputGroupOptionInput {
   position: relative;
@@ -1146,6 +1147,10 @@ div.image-set img[animation='LeftAnimation'] {
 .inputContainer .inputGroupOptionInput input[type=checkbox] {
   position: absolute;
   right: 0;
+}
+
+.grid-50 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 button.submit {

@@ -666,11 +666,12 @@ div.image-set{
 
 .inputContainer{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   color: $foreground;
   row-gap: 5%;
   column-gap: 25px;
   padding: 0 20%;
+  margin-top: 3%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
   .inputGroupOptionInput{
     position: relative;
@@ -688,6 +689,11 @@ div.image-set{
 
   }
 }
+
+.grid-50{
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
 
 button.submit{
   background-color: $background2;
