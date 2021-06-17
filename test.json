@@ -1,4 +1,1 @@
-{
-"host1": ["option1", "option2"],
- "host2": ["option1", "option2"],
-}
+["option1", "option2"]
